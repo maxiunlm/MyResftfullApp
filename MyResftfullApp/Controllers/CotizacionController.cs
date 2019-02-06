@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MyRestfullApp.Core.Currency;
+using MyRestfullApp.Core.Excpetions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -11,19 +13,31 @@ namespace MyResftfullApp.Controllers
     {
         // GET: Cotizacion/DOLAR
         [Route("Cotizacion/{moneda}")]
-        public string Get(string moneda)
+        public IHttpActionResult Get(string moneda)
         {
-            if (ModelState.IsValid)
+            try
             {
-                StrategyType type = StrategyType.Parse(moneda);
-                // Do something with the product (not shown).
+                if (ModelState.IsValid)
+                {
+                    CurrencyStrategyManager manager = new CurrencyStrategyManager();
+                    StrategyType type = manager.GetStrategyType(moneda);
+                    ICurrencyStrategy strategy = manager.GetStrategy(type);
 
-                return new HttpResponseMessage(HttpStatusCode.OK);
+                    Price cotizacion = strategy.GetPrice();
+
+                    return Json(cotizacion);
+                }
             }
-            else
+            catch (ParameterException ex)
             {
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest(ex.Message);
             }
+            catch (UnauthorizedAccessException)
+            {
+                return Unauthorized();
+            }
+
+            return BadRequest();
         }
     }
 }

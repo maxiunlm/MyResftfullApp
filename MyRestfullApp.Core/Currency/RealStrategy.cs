@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Text;
 
 namespace MyRestfullApp.Core.Currency
 {
     public class RealStrategy : ICurrencyStrategy
     {
-        public decimal GetPrice()
+        public Price GetPrice()
         {
-            return 0;
+            throw new UnauthorizedAccessException(StrategyType.real.ToString());
         }
     }
 }

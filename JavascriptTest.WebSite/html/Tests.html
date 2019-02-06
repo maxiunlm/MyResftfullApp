@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Test de Javascript</title>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+    </style>
+    <script src="../js/Employee-1.0.0.js"></script>
+    <script src="../js/MultiplyBy-1.0.0.js"></script>
+    <script src="../js/Longest_Country_Name-1.0.0.js"></script>
+    <script type="text/javascript">
+
+        document.writeln('<strong>1. Define a prototype for a class named "Employee".</strong><br>');
+        document.writeln('An employee has a first name, last name and a salary.<br>');
+        var employee = new Employee('John', 'Smith', 10000);
+        document.writeln(employee.displayDetails() + '<br>');
+
+        document.writeln('<br>Provide a method for increasing their salary by 1,000<br>');
+        employee.increaseSalary();
+        document.writeln(employee.displayDetails() + '<br>');
+
+        // ------------
+
+        document.writeln('<br><br><strong>2. Write a function called "MultiplyBy" which will produce the following outputs when invoked:.</strong><br>');
+        document.writeln('console.log(mul(2)(3)(4)); // output : 24<br>--> ');
+        console.log(multiplyBy(2)(3)(4)());
+
+        document.writeln(multiplyBy(2)(3)(4)() + '<br>');
+
+        document.writeln('<br>console.log(mul(4)(3)(4)); // output : 48<br>--> ');
+        console.log(multiplyBy(4)(3)(4)());
+        document.writeln(multiplyBy(4)(3)(4)() + '<br>');
+
+        // ------------
+
+        document.writeln('<br><br><strong>3. Write a function that accept a list of country names as input and returns the longest country name as output.</strong><br>');
+        document.writeln('Sample function : Longest_Country_Name(["Australia", "Germany", "United States of America"])');
+        document.writeln('Expected output : "United States of America".</strong><br>--> ');
+        console.log(longestCountryName(["Australia", "Germany", "United States of America"]));
+        document.writeln(longestCountryName(["Australia", "Germany", "United States of America"]) + '<br>');
+
+    </script>
+</head>
+<body>
+</body>
+</html>

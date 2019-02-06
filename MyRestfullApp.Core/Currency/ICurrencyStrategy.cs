@@ -6,6 +6,6 @@ namespace MyRestfullApp.Core.Currency
 {
     public interface ICurrencyStrategy
     {
-        decimal GetPrice();
+        Price GetPrice();
     }
 }

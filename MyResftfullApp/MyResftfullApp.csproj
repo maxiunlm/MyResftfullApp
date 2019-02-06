@@ -184,7 +184,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\CotizacionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -279,7 +279,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyRestfullApp.Core\MyRestfullApp.Core.csproj">
-      <Project>{dd572cb6-dc64-43d9-80b3-f3f32d916a70}</Project>
+      <Project>{7CC4B35B-F65F-486F-A393-BC0AAA466BCF}</Project>
       <Name>MyRestfullApp.Core</Name>
     </ProjectReference>
   </ItemGroup>

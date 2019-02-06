@@ -6,9 +6,9 @@ namespace MyRestfullApp.Core.Currency
 {
     public class PesoStrategy : ICurrencyStrategy
     {
-        public decimal GetPrice()
+        public Price GetPrice()
         {
-            return 0;
+            throw new UnauthorizedAccessException(StrategyType.peso.ToString());
         }
     }
 }

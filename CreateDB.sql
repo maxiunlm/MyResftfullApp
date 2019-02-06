@@ -1,13 +1,23 @@
-﻿CREATE DATABASE MyRestfullApp;
+﻿-- Paso 1: Crear la BD
+CREATE DATABASE MyRestfullApp;
 
+/* INNECESARIO, ES UN CODE FIRST
 CREATE TABLE users (
-	id INT IDENTITY PRIMARY KEY,
-	nombre NVARCHAR(100) NOT NULL,
-	apellido NVARCHAR(100) NOT NULL,
-	email NVARCHAR(100) NOT NULL,
-	pass NVARCHAR(20) NOT NULL
+	Id INT IDENTITY PRIMARY KEY, 
+	Nombre NVARCHAR(100) NOT NULL,
+	Apellido NVARCHAR(100) NOT NULL,
+	Email NVARCHAR(100) NOT NULL,
+	Pass NVARCHAR(20) NOT NULL
 );
+*/
 
+-- Paso2: Editar connectionString en el web.config
+-- <add name="DefaultConnection" connectionString="Data Source=(local);Initial Catalog=MyRestfulApp;Integrated Security=True" providerName="System.Data.SqlClient" />
+-- Es importante mantener el atributo name="DefaultConnection"
+
+-- Paso 3: Correr la Aplicacion
+
+-- Paso 4: Correr el siguiente insert
 INSERT INTO dbo.users
 (
     nombre,
@@ -33,4 +43,4 @@ VALUES
 );
 
 	
-	--Update-Database
+-- Para refrescar el modelo  Update-Database

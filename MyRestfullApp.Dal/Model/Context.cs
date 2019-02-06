@@ -14,7 +14,6 @@ namespace MyRestfullApp.Dal.Model
         public Context()
             : base("name=DefaultConnection")
         {
-
         }
     }
 }
